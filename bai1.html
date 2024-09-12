@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Table</title>
+    <style>
+        #display tr {
+            display: flex;
+            gap: 20px;
+        }
+
+        th {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .app{
+            width: 600px;
+        }
+        .app h3{
+            font-size: 50px;
+            text-align: center;
+        }
+
+        .input input{
+            padding: 10px;
+            width: 400px;
+            margin: 0 0 10px 10px;
+        }
+        #productTable{
+            margin-top: 10px
+        }
+        .butt{
+            text-align: center;
+        }
+        .butt button{
+            padding: 10px;
+            margin: 0 10px
+        }
+    </style>
+</head>
+<body>
+    <script>
+// Start 1
+        let productId = 1; 
+
+        function myFunction() {
+// input
+            let inputProductName = document.getElementById("inputProductName").value;
+            let inputQuantity = parseFloat(document.getElementById("inputQuantity").value);
+            let inputUnitPrice = parseFloat(document.getElementById("inputUnitPrice").value);
+            let inputDiscount = parseFloat(document.getElementById("inputDissocunt").value);
+// total 
+            let total = (inputUnitPrice * inputQuantity) - inputDiscount;
+// tham chieu đến table
+            let table = document.getElementById("productTable");
+// thêm 1 hàng tại vị trí -1
+            let row = table.insertRow(-1); 
+
+            row.insertCell(0).innerHTML = productId++;  //insertCell(n): chèn 1 ô 
+            row.insertCell(1).innerHTML = inputProductName;
+            row.insertCell(2).innerHTML = inputQuantity;
+            row.insertCell(3).innerHTML = inputUnitPrice;
+            row.insertCell(4).innerHTML = inputDiscount;
+            row.insertCell(5).innerHTML = total;
+//Khởi động lại input   
+            document.getElementById("inputProductName").value = "";
+            document.getElementById("inputQuantity").value = "";
+            document.getElementById("inputUnitPrice").value = "";
+            document.getElementById("inputDissocunt").value = "";
+        }
+    </script>
+    <div class="app">
+        <h3>NEW PRODUCT</h3>
+        <div class="input">
+            Product Name
+            <input type="text" id="inputProductName"></div>
+        <div class="input">Quantity: <input type="text" id="inputQuantity"></div>
+        <div class="input">Unit Price: <input type="text" id="inputUnitPrice"></div>
+        <div class="input">Discount: <input type="text" id="inputDissocunt"></div>
+    
+        <div class="butt">
+            <button onclick="myFunction()">Sell</button>
+            <button>Cancel</button>
+        </div>
+    
+        <table id="productTable">
+            <tr>
+                <th>ID</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Discount</th>
+                <th>Total</th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
