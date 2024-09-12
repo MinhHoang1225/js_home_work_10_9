@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var id = 0;
+        var grandTotal =0;
+        function sell(){
+            id++;
+            var pn = document.getElementById("inputName").value;    
+            var pq = document.getElementById("inputQuantity").value;
+            var pp = document.getElementById("inputPrice").value;
+            var total = pq * pp;
+            var row = "<tr>";
+            row += "<td>" + id + "</td>";
+            row += "<td>" +pn + "</td>";
+            row += "<td>" + pq + "</td>";
+            row += "<td>$" +pp + "</td>";
+            row += "<td>$" + total + "</td>";
+            row += "</tr>";
+            document.getElementById("product").innerHTML += row;
+
+            grandTotal+=total;
+            document.getElementById("grandTotal").innerText = "Total: $" + grandTotal;
+        }
+    </script>
+        <div class="product">Product Name <input type="text" name="inputName" id="inputName"></div>
+        <div class="product">Product Quantity <input type="text" name="inputQuantity" id="inputQuantity"></div>
+        <div class="product">Product Price <input type="text" name="inputPrice"id="inputPrice"></div>
+        <button onclick="sell()">Add</button>
+    <table id="product">
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Sub-total</th>
+        </tr>
+    </table>
+    <p id="grandTotal">Total: </p>
+</body>
+</html>
