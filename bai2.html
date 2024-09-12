@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .product input{
+            padding: 10px;
+            margin: 10px;
+        }
+        .butt button{
+            padding: 10px 20px;
+            margin-bottom  : 10px;
+        }
+        tr, th{
+            padding: 10px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        #grandTotal{
+            padding-left: 220px;
+            font-size: 15px;
+        }
+    </style>
 </head>
 <body>
     <script>
@@ -31,7 +50,7 @@
         <div class="product">Product Name <input type="text" name="inputName" id="inputName"></div>
         <div class="product">Product Quantity <input type="text" name="inputQuantity" id="inputQuantity"></div>
         <div class="product">Product Price <input type="text" name="inputPrice"id="inputPrice"></div>
-        <button onclick="sell()">Add</button>
+        <div class="butt"><button onclick="sell()">Add</button></div>
     <table id="product">
         <tr>
             <th>No</th>
