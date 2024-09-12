@@ -11,7 +11,7 @@
         var grandTotal =0;
         function sell(){
             id++;
-            var pn = document.getElementById("inputName").value;    
+            var pn = document.getElementById("inputName").value;
             var pq = document.getElementById("inputQuantity").value;
             var pp = document.getElementById("inputPrice").value;
             var total = pq * pp;
@@ -21,10 +21,10 @@
             row += "<td>" + pq + "</td>";
             row += "<td>$" +pp + "</td>";
             row += "<td>$" + total + "</td>";
-            row += "</tr>";
+            row += "</tr>"; 
             document.getElementById("product").innerHTML += row;
 
-            grandTotal+=total;
+            grandTotal+=total
             document.getElementById("grandTotal").innerText = "Total: $" + grandTotal;
         }
     </script>
